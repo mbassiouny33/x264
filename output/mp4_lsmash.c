@@ -1219,10 +1219,10 @@ static int set_param( hnd_t handle, x264_param_t *p_param )
     /* Set movie parameters. */
     lsmash_movie_parameters_t movie_param;
     lsmash_initialize_movie_parameters( &movie_param );
-    movie_param.major_brand = p_mp4->major_brand;
+/*    movie_param.major_brand = p_mp4->major_brand;
     movie_param.brands = brands;
     movie_param.number_of_brands = brand_count;
-    movie_param.minor_version = minor_version;
+    movie_param.minor_version = minor_version;*/
 
     MP4_FAIL_IF_ERR( lsmash_set_movie_parameters( p_mp4->p_root, &movie_param ),
                      "failed to set movie parameters.\n" );
