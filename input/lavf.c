@@ -284,6 +284,12 @@ static int read_frame( cli_pic_t *pic, hnd_t handle, int i_frame )
     return read_frame_internal( pic, handle, i_frame, NULL );
 }
 
+static int release_frame( cli_pic_t *pic, hnd_t handle )
+{
+    x264_free_packet( pic->opaque );
+    return 0;
+}
+
 static void picture_clean( cli_pic_t *pic )
 {
     memset( pic, 0, sizeof(cli_pic_t) );
