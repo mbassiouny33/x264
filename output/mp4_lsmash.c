@@ -779,12 +779,12 @@ static int set_param_audio( mp4_hnd_t* p_mp4, uint64_t i_media_timescale, lsmash
             p_audio->summary->aot = MP4A_AUDIO_OBJECT_TYPE_AAC_LC;
         p_audio->summary->sbr_mode = p_audio->has_sbr ? MP4A_AAC_SBR_BACKWARD_COMPATIBLE : MP4A_AAC_SBR_NOT_SPECIFIED;
     }
-    else if( lsmash_check_codec_type_identical( p_audio->codec_type, ISOM_CODEC_TYPE_SAMR_AUDIO )
+/*    else if( lsmash_check_codec_type_identical( p_audio->codec_type, ISOM_CODEC_TYPE_SAMR_AUDIO )
           || lsmash_check_codec_type_identical( p_audio->codec_type, ISOM_CODEC_TYPE_SAWB_AUDIO ) )
     {
             MP4_FAIL_IF_ERR( mp4sys_amr_create_damr( p_audio->summary ),
                              "failed to create AMR specific info.\n" );
-    }
+    }*/
 #else
     /*
      * NOTE: Retrieve audio summary, which will be used for lsmash_add_sample_entry() as audio parameters.
