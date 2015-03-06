@@ -46,9 +46,9 @@ CONFIG := $(shell cat config.h)
 ifneq ($(findstring HAVE_GPL 1, $(CONFIG)),)
 SRCCLI += filters/video/yadif.c filters/video/yadif_filter_line.c
 
-ifeq ($(ARCH),X86)
+#ifeq ($(ARCH),X86)
 SRCCLI += filters/video/x86/yadif_filter_line.c
-endif
+#endif
 
 endif
 
